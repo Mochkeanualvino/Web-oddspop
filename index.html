@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oddspop - Coffee & Thriftshop</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oddblue: {
+                            DEFAULT: '#1a365d',
+                            light: '#2b6cb0',
+                            dark: '#0f172a'
+                        },
+                        oddgray: {
+                            dark: '#111827',
+                            card: '#1f2937',
+                            border: '#374151'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-oddgray-dark text-gray-100 min-h-screen flex flex-col antialiased selection:bg-oddblue selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-oddblue text-white text-[10px] sm:text-xs font-bold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap shadow-md">
+        <i class="fa-solid fa-store animate-pulse"></i>
+        <span>ODDSPØP IS OPEN DAILY (15:00 - 23:00 WIB) • Jl. Tanjakan Pala, Bojongherang, Cianjur</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-oddgray-dark/95 backdrop-blur-md border-b border-oddgray-border">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Logo Bunga ODDSPØP -->
+                <div class="w-10 h-10 rounded-full bg-white overflow-hidden shadow-lg shadow-white/10 flex items-center justify-center border-2 border-oddgray-border group-hover:border-oddblue transition">
+                    <img src="https://i.postimg.cc/ZKrjbTLs/840849804-18633937042043279-2579828531467615759-n.jpg" alt="Logo ODDSPØP" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-base tracking-tight text-white leading-none">oddspop</h1>
+                    <span class="text-[9px] text-gray-400 font-medium tracking-widest uppercase">Coffee & Thrift</span>
+                </div>
+            </a>
+
+            <!-- Menu Navigasi Desktop -->
+            <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-gray-300">
+                <a href="#about" class="hover:text-oddblue-light transition">Tentang</a>
+                <a href="#instagram" class="hover:text-oddblue-light transition">Galeri</a>
+                <a href="#catalog" class="hover:text-oddblue-light transition">Katalog</a>
+                <a href="#location" class="hover:text-oddblue-light transition">Lokasi</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <button onclick="openWhatsApp()" class="bg-oddblue hover:bg-blue-700 text-white px-3.5 sm:px-4 py-2 rounded-lg text-[11px] sm:text-xs font-bold flex items-center gap-1.5 shadow-md shadow-oddblue/20 transition">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Pesan WA
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 pb-20">
+
+        <!-- Hero Section -->
+        <section id="about" class="pt-12 pb-12 text-center max-w-2xl mx-auto">
+            <!-- Profil Bulat Besar di Tengah -->
+            <div class="flex justify-center mb-6">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-white overflow-hidden shadow-2xl shadow-white/5 border-4 border-oddgray-border">
+                    <img src="https://i.postimg.cc/ZKrjbTLs/840849804-18633937042043279-2579828531467615759-n.jpg" alt="ODDSPØP Logo" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="inline-flex items-center gap-2 bg-oddgray-card border border-oddgray-border px-3.5 py-1.5 rounded-full text-xs font-semibold text-oddblue-light mb-4 shadow-sm">
+                <i class="fa-solid fa-mug-hot"></i> Authentic Coffee & Curated Vintage
+            </div>
+            
+            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4 uppercase leading-tight">
+                ODDSPØP <br> <span class="text-oddblue-light text-2xl sm:text-4xl">COFFEE & THRIFT</span>
+            </h2>
+            
+            <p class="text-gray-400 text-xs sm:text-sm max-w-lg mx-auto mb-8 leading-relaxed">
+                Ruang santai kasual dengan nuansa indie streetwear. Menikmati seduhan kopi berkualitas sambil berburu koleksi kemeja, kaos, jaket, dan sepatu sneakers vintage terkurasi di Bojongherang, Cianjur.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <button onclick="openCatalogModal()" class="w-full sm:w-auto bg-oddblue text-white font-extrabold px-6 py-3.5 rounded-xl hover:bg-blue-700 transition flex items-center justify-center gap-2 text-xs shadow-lg shadow-oddblue/30">
+                    <i class="fa-solid fa-utensils"></i> LIHAT MENU & KATALOG
+                </button>
+                <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Tanjakan+Pala,+Bojongherang,+Cianjur" target="_blank" class="w-full sm:w-auto bg-oddgray-card border border-oddgray-border hover:border-gray-500 text-white font-bold px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2 text-xs">
+                    <i class="fa-solid fa-location-dot text-oddblue-light"></i> PETUNJUK ARAH MAPS
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Banner / Image Showcase -->
+        <section class="max-w-3xl mx-auto mb-16">
+            <div class="relative bg-oddgray-card border border-oddgray-border rounded-2xl overflow-hidden shadow-2xl p-3">
+                <div class="absolute top-6 left-6 z-10 flex gap-2">
+                    <span class="bg-oddblue text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20 shadow">
+                        <i class="fa-solid fa-bolt"></i> 10k - 15k MENU
+                    </span>
+                </div>
+                <!-- Foto ODDSPØP SPACE -->
+                <div class="aspect-video w-full rounded-xl overflow-hidden bg-zinc-900">
+                    <img src="https://i.postimg.cc/6qTJs8Zm/IMG-20261029-WA0051.jpg" alt="Oddspop Space" class="w-full h-full object-cover">
+                </div>
+                <div class="p-3 flex items-center justify-between">
+                    <div>
+                        <h3 class="font-bold text-white text-xs">ODDSPØP SPACE</h3>
+                        <p class="text-[11px] text-gray-400">Coffee & Vintage Spot</p>
+                    </div>
+                    <span class="text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-lg">
+                        OPEN TODAY
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Feed Section -->
+        <section id="instagram" class="mb-16">
+            <div class="flex items-center justify-between mb-6 border-b border-oddgray-border pb-3">
+                <div>
+                    <span class="text-[10px] font-bold text-oddblue-light tracking-widest uppercase block">Galeri Sepatu & Pakaian</span>
+                    <h3 class="text-xl font-black text-white">NEW ARRIVALS @ODDSPOP</h3>
+                </div>
+                <a href="https://instagram.com/oddspop" target="_blank" class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white text-xs font-bold px-4 py-2 rounded-xl shadow">
+                    <i class="fa-brands fa-instagram"></i> Follow IG
+                </a>
+            </div>
+
+            <!-- IG Feed Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4" id="ig-grid"></div>
+        </section>
+
+        <!-- Quick Catalog Preview Section -->
+        <section id="catalog" class="mb-16">
+            <div class="text-center max-w-lg mx-auto mb-8">
+                <span class="text-[10px] font-bold text-oddblue-light tracking-widest uppercase">Favorit</span>
+                <h3 class="text-2xl font-black text-white mt-1">MENU & THRIFT KATALOG</h3>
+                <p class="text-gray-400 text-xs mt-1.5">Pilih menu kopi atau pakaian/sepatu thrift, langsung pesan via WhatsApp.</p>
+            </div>
+
+            <!-- Catalog Tabs -->
+            <div class="flex justify-center flex-wrap gap-2 mb-8">
+                <button onclick="filterCatalog('all')" id="btn-all" class="px-4 py-2 rounded-xl text-xs font-bold bg-oddblue text-white transition shadow-md">Semua</button>
+                <button onclick="filterCatalog('coffee')" id="btn-coffee" class="px-4 py-2 rounded-xl text-xs font-bold bg-oddgray-card border border-oddgray-border text-gray-300 hover:text-white transition">☕ Kopi</button>
+                <button onclick="filterCatalog('apparel')" id="btn-apparel" class="px-4 py-2 rounded-xl text-xs font-bold bg-oddgray-card border border-oddgray-border text-gray-300 hover:text-white transition">👕 Pakaian</button>
+                <button onclick="filterCatalog('shoes')" id="btn-shoes" class="px-4 py-2 rounded-xl text-xs font-bold bg-oddgray-card border border-oddgray-border text-gray-300 hover:text-white transition">👟 Sepatu</button>
+            </div>
+
+            <!-- Catalog Items Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4" id="catalog-grid"></div>
+        </section>
+
+        <!-- Location Section (Tanpa Info Nomor WA) -->
+        <section id="location" class="max-w-3xl mx-auto mb-8">
+            <div class="bg-oddgray-card border border-oddgray-border rounded-2xl p-6 shadow-xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <span class="text-[10px] font-bold text-oddblue-light tracking-widest uppercase">Alamat</span>
+                        <h3 class="text-xl font-black text-white mt-1 mb-2">LOKASI STORE</h3>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            <i class="fa-solid fa-map-pin text-oddblue-light mr-2"></i>Jl. Tanjakan Pala, Bojongherang, Cianjur, Jawa Barat.
+                        </p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Tanjakan+Pala,+Bojongherang,+Cianjur" target="_blank" class="inline-flex items-center gap-2 bg-oddblue text-white text-xs font-extrabold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition shadow">
+                            <i class="fa-solid fa-diamond-turn-right"></i> Buka Google Maps
+                        </a>
+                    </div>
+                    <div class="bg-zinc-900 border border-oddgray-border rounded-xl p-4 flex flex-col justify-center gap-3 text-xs">
+                        <div class="flex items-center gap-2.5 text-gray-300">
+                            <i class="fa-regular fa-clock text-oddblue-light text-base"></i>
+                            <div><strong class="text-white block">Jam Buka</strong>15:00 - 23:00 WIB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-oddgray-border py-6 text-center text-xs text-gray-500 bg-oddgray-card/50">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p>&copy; 2026 ODDSPØP Coffee & Thriftshop.</p>
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/oddspop" target="_blank" class="hover:text-oddblue-light transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+                <a href="#" onclick="openWhatsApp(); return false;" class="hover:text-oddblue-light transition"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Floating Bar (Tanpa tombol Edit WA) -->
+    <div class="fixed bottom-0 left-0 right-0 z-30 bg-oddgray-card/95 backdrop-blur-md border-t border-oddgray-border px-4 py-2.5 flex items-center justify-around text-[10px] font-bold text-gray-400 md:hidden shadow-2xl">
+        <a href="#about" class="flex flex-col items-center gap-1 text-oddblue-light">
+            <i class="fa-solid fa-house text-sm"></i><span>Home</span>
+        </a>
+        <button onclick="openCatalogModal()" class="flex flex-col items-center gap-1 hover:text-white">
+            <i class="fa-solid fa-utensils text-sm"></i><span>Katalog</span>
+        </button>
+    </div>
+
+    <!-- CATALOG MODAL -->
+    <div id="catalog-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-oddgray-card border border-oddgray-border w-full max-w-2xl rounded-t-3xl sm:rounded-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-4 border-b border-oddgray-border flex items-center justify-between">
+                <div>
+                    <h3 class="font-extrabold text-white text-sm">Katalog Menu & Thrift</h3>
+                    <p class="text-[11px] text-gray-400">Pesan langsung via WhatsApp</p>
+                </div>
+                <button onclick="closeCatalogModal()" class="w-8 h-8 rounded-full bg-zinc-800 text-gray-300 hover:text-white flex items-center justify-center text-xs transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 overflow-y-auto flex-grow grid grid-cols-1 sm:grid-cols-2 gap-3" id="modal-catalog-list"></div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // ==========================================
+        // GANTI NOMOR WHATSAPP ANDA DI SINI
+        // ==========================================
+        const NOMOR_WA = "6289503715551"; // Awali dengan 62 tanpa angka 0 di depan
+
+        const INSTAGRAM_POSTS = [
+            { image: "https://i.postimg.cc/Jnfc8gDp/Vans-epoch-Ukuran-38-24cm-Harga-Second-original-Kode-barang-HBS-719Untuk-order-DM-kami-dengan.webp", link: "https://instagram.com/oddspop" },
+            { image: "https://i.postimg.cc/50YqZ10X/Handball-spezial-Ukuran-37-5Kondisi-terbaik-Harga-Second-original-Kode-barang-HBS-718Untuk-ord.webp", link: "https://instagram.com/oddspop" },
+            { image: "https://i.postimg.cc/rm0CvcmK/Trucker-jacket-HNMUkuran-L-on-tag-Warna-Hitam-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur.webp", link: "https://instagram.com/oddspop" },
+            { image: "https://i.postimg.cc/26bFPm6B/Kemeja-boxy-GUUkuran-S-on-tag-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur-P-L-66cmx-52cm.webp", link: "https://instagram.com/oddspop" },
+            { image: "https://i.postimg.cc/bJ7HPMD3/P-6000Ukuran-36-5-23-5cm-Harga-Second-original-Kode-barang-HBS-723Untuk-order-DM-kami-dengan-m.webp", link: "https://instagram.com/oddspop" },
+            { image: "https://i.postimg.cc/TwLqZGwh/Jaket-Uniklo-mountain-parka-Ukuran-M-on-tag-Warna-Navy-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi.webp", link: "https://instagram.com/oddspop" }
+        ];
+
+        const PRODUCT_CATALOG = [
+            // Kopi
+            { name: "Kopi Americano", category: "coffee", price: "10.000", image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80", desc: "Single origin espresso blend segar." },
+            { name: "Matcha Latte", category: "coffee", price: "15.000", image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80", desc: "Creamy matcha premium pilihan." },
+            
+            // Sepatu
+            { name: "Vans Epoch Black White", category: "shoes", price: "320.000", image: "https://i.postimg.cc/Jnfc8gDp/Vans-epoch-Ukuran-38-24cm-Harga-Second-original-Kode-barang-HBS-719Untuk-order-DM-kami-dengan.webp", desc: "Suede canvas, V detail, Size 38/24cm." },
+            { name: "Vans Authentic Navy", category: "shoes", price: "275.000", image: "https://i.postimg.cc/mDvN4qzN/Authentic-Ukuran-37-23-5cm-Harga-Second-original-Kode-barang-HBS-724Untuk-order-DM-kami-dengan-m.webp", desc: "Classic authentic navy vintage." },
+            { name: "Vans Authentic Black", category: "shoes", price: "285.000", image: "https://i.postimg.cc/9MRtvVMk/Authentic-Ukuran-37-23-5cm-Harga-Second-original-Kode-barang-HBS-725Untuk-order-DM-kami-dengan-m.webp", desc: "Classic authentic black white." },
+            { name: "Adidas Handball Spezial", category: "shoes", price: "245.000", image: "https://i.postimg.cc/50YqZ10X/Handball-spezial-Ukuran-37-5Kondisi-terbaik-Harga-Second-original-Kode-barang-HBS-718Untuk-ord.webp", desc: "Suede cream gum sole, kondisi terbaik." },
+            { name: "Vans Slip-On Black", category: "shoes", price: "250.000", image: "https://i.postimg.cc/zBsSNMbj/Slip-on-Ukuran-38-24cm-Harga-Second-original-Kode-barang-HBS-726Untuk-order-DM-kami-dengan-menye.webp", desc: "Slip-on canvas full hitam pekat." },
+            { name: "Nike P-6000 Silver", category: "shoes", price: "379.000", image: "https://i.postimg.cc/xCJyWYCN/P-6000Ukuran-36-5Kondisi-terbaik-Harga-379-000-Second-original-Kode-barang-HBS-721Untuk-order.webp", desc: "Running mesh retro silver metallic." },
+            { name: "Nike P-6000 Bone", category: "shoes", price: "379.000", image: "https://i.postimg.cc/bJ7HPMD3/P-6000Ukuran-36-5-23-5cm-Harga-Second-original-Kode-barang-HBS-723Untuk-order-DM-kami-dengan-m.webp", desc: "Light grey mesh retro Y2K style." },
+            { name: "New Balance 237", category: "shoes", price: "350.000", image: "https://i.postimg.cc/NM97WYMp/Nb-237Ukuran-36-22cm-Harga-Second-original-Kode-barang-HBS-722Untuk-order-DM-kami-dengan-menye.webp", desc: "Suede/mesh retro classic navy." },
+
+            // Pakaian
+            { name: "Jaket Parka Uniqlo Navy", category: "apparel", price: "135.000", image: "https://i.postimg.cc/TwLqZGwh/Jaket-Uniklo-mountain-parka-Ukuran-M-on-tag-Warna-Navy-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi.webp", desc: "Parka mountain navy kondisi mulus." },
+            { name: "Kemeja GU Boxy Stripe", category: "apparel", price: "85.000", image: "https://i.postimg.cc/26bFPm6B/Kemeja-boxy-GUUkuran-S-on-tag-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur-P-L-66cmx-52cm.webp", desc: "Kemeja motif garis biru-putih unik." },
+            { name: "Kemeja Uniqlo U Cokelat", category: "apparel", price: "85.000", image: "https://i.postimg.cc/JnDc9mnx/Kemeja-boxy-uniqlo-u-Ukuran-S-on-tag-oversize-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Pengguna.jpg", desc: "Bahan katun adem, warna cokelat oversize." },
+            { name: "Pocket Tee GU Stripe", category: "apparel", price: "65.000", image: "https://i.postimg.cc/76GMpD6V/Pocket-tee-gu-boxy-Ukuran-M-on-tag-Kondisi-mulus-ada-minus-coretan-sedikit-dibagian-belakang-tapi.jpg", desc: "Motif garis retro abu-putih saku dada." },
+            { name: "Pocket Tee GU Hitam", category: "apparel", price: "65.000", image: "https://i.postimg.cc/k46Fk94p/Pocket-tee-gu-hitam-Ukuran-M-on-tag-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Pengguna-M-sampai-L.jpg", desc: "Kaos polos hitam saku dada." },
+            { name: "Pocket Tee Uniqlo Airism", category: "apparel", price: "65.000", image: "https://i.postimg.cc/rm0Cvcmg/Pocket-tee-uniqlo-airism-Ukuran-L-on-tag-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur-P-L-70.jpg", desc: "Airism hitam mulus, sudah dicuci wangi." },
+            { name: "Trucker Jacket H&M", category: "apparel", price: "145.000", image: "https://i.postimg.cc/rm0CvcmK/Trucker-jacket-HNMUkuran-L-on-tag-Warna-Hitam-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Terukur.webp", desc: "Jaket jeans gelap pekat hitam." },
+            { name: "Kemeja Uniqlo Gingham", category: "apparel", price: "85.000", image: "https://i.postimg.cc/k46Fk94Q/uniqlo-bottondown-gingham-Longsleev-Ukuran-M-on-tag-Kondisi-mulus-sudah-dicuci-bersih-dan-wangi-Teru.jpg", desc: "Kemeja kotak biru klasik button down." }
+        ];
+
+        function openWhatsApp(msg = "Halo kak, saya mau pesan produk dari oddspop.") {
+            window.open(`https://wa.me/${NOMOR_WA}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function renderInstagramFeed() {
+            document.getElementById('ig-grid').innerHTML = INSTAGRAM_POSTS.map(post => `
+                <a href="${post.link}" target="_blank" class="group relative bg-oddgray-card border border-oddgray-border rounded-xl overflow-hidden aspect-square block shadow">
+                    <img src="${post.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </a>
+            `).join('');
+        }
+
+        function getCategoryLabel(cat) {
+            if(cat === 'coffee') return '☕ Kopi';
+            if(cat === 'apparel') return '👕 Pakaian';
+            if(cat === 'shoes') return '👟 Sepatu';
+            return 'Thrift';
+        }
+
+        function renderCatalog(filter = 'all', targetId = 'catalog-grid') {
+            const filtered = filter === 'all' ? PRODUCT_CATALOG : PRODUCT_CATALOG.filter(p => p.category === filter);
+            document.getElementById(targetId).innerHTML = filtered.map(item => `
+                <div class="bg-oddgray-card border border-oddgray-border rounded-xl p-3 flex flex-col justify-between shadow">
+                    <div>
+                        <div class="aspect-square rounded-lg overflow-hidden bg-white/5 mb-2.5 flex items-center justify-center">
+                            <img src="${item.image}" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-[9px] font-bold text-oddblue-light uppercase">${getCategoryLabel(item.category)}</span>
+                        <h4 class="font-bold text-white text-[11px] sm:text-xs mt-0.5 leading-tight">${item.name}</h4>
+                        <p class="text-[10px] sm:text-[11px] text-gray-400 mt-1 line-clamp-2">${item.desc}</p>
+                    </div>
+                    <div class="mt-3 pt-2.5 border-t border-oddgray-border flex items-center justify-between">
+                        <span class="font-extrabold text-white text-[11px] sm:text-xs">Rp ${item.price}</span>
+                        <button onclick="openWhatsApp('Halo kak, saya mau pesan ${item.name} (Rp ${item.price})')" class="bg-oddblue text-white text-[10px] sm:text-xs font-bold px-2.5 py-1.5 rounded-lg hover:bg-blue-700 transition">Pesan</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCatalog(category) {
+            const btnIds = ['all', 'coffee', 'apparel', 'shoes'];
+            btnIds.forEach(id => {
+                const btn = document.getElementById(`btn-${id}`);
+                if (!btn) return;
+                if (id === category) {
+                    btn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-oddblue text-white transition shadow-md";
+                } else {
+                    btn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-oddgray-card border border-oddgray-border text-gray-300 hover:text-white transition";
+                }
+            });
+            renderCatalog(category);
+        }
+
+        function openCatalogModal() {
+            document.getElementById('catalog-modal').classList.remove('hidden');
+            document.getElementById('catalog-modal').classList.add('flex');
+            renderCatalog('all', 'modal-catalog-list');
+        }
+        function closeCatalogModal() { document.getElementById('catalog-modal').classList.add('hidden'); document.getElementById('catalog-modal').classList.remove('flex'); }
+
+        window.onload = () => { renderInstagramFeed(); renderCatalog('all'); };
+    </script>
+</body>
+</html>
